@@ -1,0 +1,29 @@
+<div class="card-content table-responsive">
+  <table class="table table-hover">
+    <thead class="text-primary">
+      <tr>
+        <th>Sr no.</th>
+        <th>SNF</th>
+        <th>Fat</th>
+        <th>SNF/Fat Rate</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for( let i = 0; i < user.length; i++ ) { %>
+      <tr>
+        <td><%=i+1 %></td>
+        <td><%= user[i].SNF %></td>
+
+        <td><%= user[i].fat %></td>
+        <td><%= user[i].snffatmilkrate %></td>
+        <td>
+          <a href="/api/snffatrate/delete?id=<%= user[i]._id %>" class="delete"
+            ><i class="fas fa-trash-alt"></i
+          ></a>
+        </td>
+      </tr>
+      <% } %>
+    </tbody>
+  </table>
+</div>

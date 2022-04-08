@@ -1,0 +1,29 @@
+<div class="card-content table-responsive">
+  <table class="table table-hover">
+    <thead class="text-primary">
+      <tr>
+        <th>Sr no.</th>
+        <th>Date</th>
+        <th>Type</th>
+        <th>Quantity</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% if (user.length) { %> <% for( let i = 0; i < user.length; i++ ) { %>
+      <tr>
+        <td><%= i+1 %></td>
+        <td><%= user[i].date %></td>
+
+        <td><%= user[i].milktype %></td>
+        <td><%= user[i].quantity %></td>
+        <td><%= (user[i].quantity)*(user[i].rateperlit) %></td>
+      </tr>
+      <% } %> <% }else{ %>
+      <tr>
+        <td>No Record Found</td>
+      </tr>
+      <%} %>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,45 @@
+<div class="card-content table-responsive">
+  <table class="table table-hover">
+    <thead class="text-primary">
+      <tr>
+        <th>Sr no.</th>
+        <th>Name</th>
+        <th>Date</th>
+        <th>Milktype</th>
+
+        <th>Quantity</th>
+        <th>SNF</th>
+        <th>Fat</th>
+        <th>Rate(L)</th>
+        <th>Total</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% if (user.length) { %> <% for( let i = 0; i < user.length; i++ ) { %>
+      <tr>
+        <td><%=i+1 %></td>
+        <td><%= user[i].name %></td>
+
+        <td><%= user[i].date %></td>
+        <td><%= user[i].milktype %></td>
+        <td><%= user[i].quantity %></td>
+        <td><%= user[i].SNF %></td>
+        <td><%= user[i].fat %></td>
+        <td><%= user[i].rateperlit %></td>
+        <td><%= user[i].rateperlit*user[i].quantity %></td>
+        <td>
+          <a href="/api/milkman/delete?id=<%= user[i]._id %>" class="delete"
+            ><i class="fas fa-trash-alt"></i
+          ></a>
+        </td>
+      </tr>
+
+      <% } %> <% } else{ %>
+      <tr>
+        <td>No Record Found</td>
+      </tr>
+      <% } %>
+    </tbody>
+  </table>
+</div>

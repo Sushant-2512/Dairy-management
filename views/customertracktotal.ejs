@@ -1,0 +1,218 @@
+<%- include('layouts/DashHeader') %>
+
+
+    <body>
+
+
+
+
+        <div class="wrapper">
+
+
+
+           
+
+
+            <!-- Sidebar  -->
+            <nav id="sidebar">
+
+                <ul class="list-unstyled components">
+                    <li class="">
+                        <a href="/Dash/admin" class="dashboard"><i
+                                class="material-icons">dashboard</i><span>Dashboard</span></a>
+                    </li>
+
+                    <div class="small-screen navbar-display">
+
+
+
+                        <li class="">
+                            <a href="/Dash/admin/snffatratedata"><i
+                                    class="material-icons">library_books</i><span>SNF/Fat Rate Track</span></a>
+                        </li>
+
+                        <li class="">
+                            <a href="/Dash/admin/customerdata"><i class="material-icons">manage_accounts</i><span>Customer
+                                    Data</span></a>
+                        </li>
+                        <li class="">
+                            <a href="/Dash/admin/milkmandata"><i class="material-icons">manage_accounts</i><span>Milkman Data</span></a>
+                        </li>
+                        <li class="active">
+                            <a href="/Dash/admin/customertrack"><i class="material-icons">analytics</i><span>Customer
+                                    Track</span></a>
+                        </li>
+
+                        <li class="">
+                            <a href="/Dash/admin/milkmantrack"><i class="material-icons">analytics</i><span>Milkman
+                                    Track</span></a>
+                        </li>
+                        <li class="d-lg-none d-md-block d-xl-none d-sm-block">
+                            <a href="/logout"><i class="material-icons">person</i><span>Sign Out</span></a>
+                        </li>
+                    </div>
+
+                </ul>
+
+
+            </nav>
+
+
+
+            <!-- Page Content  -->
+            <div id="content">
+
+                <div class="top-navbar">
+                    <nav class="navbar navbar-expand-lg">
+                        <div class="container-fluid">
+
+                            <button type="button" id="sidebarCollapse" class="d-xl-block d-lg-block d-md-mone d-none">
+                                <span class="material-icons">arrow_back_ios</span>
+                            </button>
+
+                            <a class="navbar-brand"> Admin Dashboard </a>
+
+                            <button class="d-inline-block d-lg-none ml-auto more-button" type="button"
+                                data-toggle="collapse" data-target="#navbarSupportedContent"
+                                aria-controls="navbarSupportedContent" aria-expanded="false"
+                                aria-label="Toggle navigation">
+                                <span class="material-icons">more_vert</span>
+                            </button>
+
+                            <div class="collapse navbar-collapse d-lg-block d-xl-block d-sm-none d-md-none d-none"
+                                id="navbarSupportedContent">
+                                <ul class="nav navbar-nav ml-auto">
+
+                                    <li class="nav-item">
+                                        <a href="/logout"><i class="material-icons">person</i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+
+
+                <div class="main-content">
+
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="card card-stats">
+                                <div class="card-header">
+                                    <div class="icon icon-warning">
+                                        <span class="material-icons">equalizer</span>
+                                    </div>
+                                </div>
+                                <div class="card-content">
+                                    <h3 class="card-title"> <%= quantity %> </h3>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="stats">
+                                        <i class="material-icons text-info">person</i>
+                                        Total Milk Buyed
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="card card-stats">
+                                <div class="card-header">
+                                    <div class="icon icon-success">
+                                        <span class="material-icons">
+                                            attach_money
+                                        </span>
+                    
+                                    </div>
+                                </div>
+                                <div class="card-content">
+                    
+                                    <h3 class="card-title"><%= total %>  </h3>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="stats">
+                                        <i class="material-icons">local_offer</i> Total Payed
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    
+
+
+                    <form class="form-inline" action="/api/customertrack/search" method="POST">
+                
+                        <div class="form-group mx-sm-3 mb-2">
+                          <!-- <label for="inputPassword2" class="sr-only"></label> -->
+                          <input type="text" name="name" class="form-control"  placeholder="Search By Name" >
+                        </div>
+                        <div class="form-group mx-sm-3 mb-2">
+                            <!-- <p><label for="startingdate" class="sr-only">start</label></p> -->
+                            <input type="date" name="sdate" id="startingdate"class="form-control"  >
+                          </div>
+                          <div class="form-group mx-sm-3 mb-2">
+                              <!-- <label for="endingdate" class="sr-only">start</label> -->
+                              <input type="date" name="edate" class="form-control" id="endingdate" >
+                            </div>
+                        <button type="submit" class="btn btn-primary mb-2">Search</button>
+                      </form>
+
+                    <div class=" row row-table table ">
+
+                        <div class="card" style="min-height: 485px">
+                            <div class="card-header card-header-text d-flex justify-content-between align-items-center">
+                            <div>
+
+                                <h4 class="card-title">Customer</h4>
+                                <p class="category">Track</p>
+                            </div>
+
+                            <a href="http://localhost:3000/pdf/customertrack.pdf" target="_blank"><button type="button" class="download "><i
+                                class="material-icons">arrow_downwards</i></button></a>
+
+                            </div>
+                            <%- include('layouts/admincustomertrack') %>
+
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+
+
+
+            </div>
+        </div>
+
+
+
+        <%-include("layouts/homefooter") %>
+
+
+
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    $('#sidebarCollapse').on('click', function () {
+                        $('#sidebar').toggleClass('active');
+                        $('#content').toggleClass('active');
+                    });
+
+                    $('.more-button,.body-overlay').on('click', function () {
+                        $('#sidebar,.body-overlay').toggleClass('show-nav');
+                    });
+
+                });
+
+
+
+
+            </script>
+
+
+
+
+
+    </body>
+
+    </html>

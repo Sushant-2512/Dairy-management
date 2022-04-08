@@ -1,0 +1,103 @@
+<%- include('layouts/DashHeader') %>
+<body>
+    
+
+
+    <div class="offcanvas offcanvas-start" tabindex="-1" data-bs-scroll="true" id="offcanvasLeft"
+    aria-labelledby="offcanvasLeftLabel">
+    <div class="offcanvas-header">
+        <h5 id="offcanvasLeftLabel">Customer Entry</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+            aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <form method="post" action="/api/customer">
+
+            <div class="form-group ">
+                <label for="inputEmail4">name</label>
+                <input type="text" class="form-control" id="inputEmail4" placeholder="Name"
+                    name="name" required>
+            </div>
+            <div class="form-group ">
+                <label for="custdate">date</label>
+                <input type="date" class="form-control date" id="custdate" placeholder="date"
+                    name="date" required>
+            </div>
+
+            <div class="form-group ">
+                <label for="type">Milktype</label>
+                <select class="form-select form-control" aria-label="Default select example"
+                    placeholder="Milktype" name="type" id="type" required>
+
+                    <option value="" disabled selected>Milktype</option>
+                    <option value="Cow">Cow</option>
+                    <option value="Buffalo">Buffalo</option>
+                    <!-- <option value="Both">Both</option> -->
+                </select>
+            </div>
+            <div class="form-group ">
+                <label for="quantity">Quantity</label>
+                <input type="number" class="form-control" id="quantity"
+                    placeholder="Quantity in Liter" name="quantity" required>
+            </div>
+            <div class="form-group ">
+                <label for="rate">Rate Per Liter</label>
+                <input type="number" class="form-control" id="rate" placeholder="Rate per liter"
+                    name="rateperlit" required>
+            </div>
+
+
+            <button type="submit" class="btn btn-outline-primary">submit</button>
+        </form>
+
+
+
+
+
+
+
+    </div>
+</div>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+                $('#content').toggleClass('active');
+            });
+
+            $('.more-button,.body-overlay').on('click', function () {
+                $('#sidebar,.body-overlay').toggleClass('show-nav');
+            });
+
+        });
+
+        function setInputDate(_id) {
+            var _dat = document.querySelector(_id);
+            var hoy = new Date(),
+                d = hoy.getDate(),
+                m = hoy.getMonth() + 1,
+                y = hoy.getFullYear(),
+                data;
+
+            if (d < 10) {
+                d = "0" + d;
+            };
+            if (m < 10) {
+                m = "0" + m;
+            };
+
+            data = y + "-" + m + "-" + d;
+            console.log(data);
+            _dat.value = data;
+        };
+
+        setInputDate("#milkdate");
+        setInputDate("#custdate");
+
+
+
+
+
+    </script>
+</body>
+</html>

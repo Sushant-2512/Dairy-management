@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,300&display=swap");
+body {
+  font-family: "Poppins", sans-serif;
+}
+.head__custom-nav .navbar-brand img {
+  width: 18px;
+  height: 18px;
+}
+.head__custom-nav .navbar-brand span {
+  font-weight: 700;
+  font-size: 22px;
+  margin-left: 10px;
+}
+.head__custom-nav button {
+  padding: 0;
+}
+.head__custom-nav button span img {
+  width: 45px;
+}
+.head__custom-nav #navbarNav .navbar-nav .nav-item .nav-link {
+  color: #000;
+  font-weight: 400;
+  padding: 8px 15px;
+  white-space: nowrap;
+  transition: 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+.head__custom-nav #navbarNav .navbar-nav .nav-item .nav-link:hover {
+  color: lightcoral;
+}
+.form-select {
+  border: none;
+}
+
+.register-photo {
+  background: #f1f7fc;
+  padding: 20px 0;
+  /* height: 100vh; */
+}
+
+.register-photo .image-holder {
+  display: table-cell;
+  width: auto;
+  background: url("/image/customer.jpg");
+  background-size: cover;
+}
+
+.register-photo .form-container {
+  display: table;
+  max-width: 900px;
+  width: 90%;
+  margin: 0 auto;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.register-photo form {
+  display: table-cell;
+  width: 400px;
+  background-color: #ffffff;
+  padding: 40px 60px;
+  color: #505e6c;
+}
+
+@media (max-width: 991px) {
+  .register-photo form {
+    padding: 40px;
+  }
+}
+
+.register-photo form h2 {
+  font-size: 24px;
+  line-height: 1.5;
+  margin-bottom: 30px;
+}
+
+.register-photo form .form-control {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #dfe7f1;
+  border-radius: 0;
+  box-shadow: none;
+  outline: none;
+  color: inherit;
+  text-indent: 0px;
+  height: 40px;
+}
+
+.register-photo form .form-check {
+  font-size: 13px;
+  line-height: 20px;
+}
+
+.register-photo form .btn-primary {
+  /* background: blue; */
+  border: none;
+  border-radius: 4px;
+  padding: 11px;
+  box-shadow: none;
+  margin-top: 35px;
+  text-shadow: none;
+  outline: none !important;
+}
+
+.register-photo form .btn-primary:active {
+  transform: translateY(1px);
+}
+
+.register-photo form .already {
+  display: block;
+  text-align: center;
+  font-size: 12px;
+  color: blue;
+  opacity: 0.7;
+  text-decoration: none;
+}
+.register-photo form .bold {
+  color: black;
+}
+@media only screen and (max-width: 880px) {
+  .image-holder {
+    /* visibility: hidden; */
+
+    display: none;
+  }
+  .register-photo .image-holder {
+    width: 0px;
+  }
+}

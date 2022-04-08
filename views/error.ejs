@@ -1,0 +1,19 @@
+<%- include("layouts/homeheader") %>
+<body>
+  <%- include("layouts/homenavbar") %>
+  <div class="container">
+    <div class="row custom-section d-flex align-items-center">
+      <div class="col-12 col-lg-4">
+        <h2>Oops...</h2>
+        <h3><%= error.status %></h3>
+        <h4><%= error.message %></h4>
+        <a href="/"><- Home</a>
+      </div>
+      <div class="col-12 col-lg-8">
+        <img src="\image\cowmilkman.svg" alt="Team process banner" />
+      </div>
+    </div>
+  </div>
+
+  <%-include("layouts/homefooter") %>
+</body>

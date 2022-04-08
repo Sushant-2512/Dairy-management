@@ -1,0 +1,269 @@
+<%- include('layouts/DashHeader') %>
+
+
+    <body>
+
+
+
+
+        <div class="wrapper">
+
+
+
+            <nav id="sidebar">
+
+                <ul class="list-unstyled components">
+                    <li class="active">
+                        <a href="/Dash/admin" class="dashboard"><i
+                                class="material-icons">dashboard</i><span>Dashboard</span></a>
+                    </li>
+
+                    <div class="small-screen navbar-display">
+
+
+
+                        <li class="">
+                            <a href="/Dash/admin/summary2"><i
+                                    class="material-icons">library_books</i><span>Summary</span></a>
+                        </li>
+                       
+                        <li class="">
+                          <a href="/Dash/admin/entry"><i
+                                  class="material-icons">library_books</i><span>entry</span></a>
+                      </li>
+                      
+                        <li class="">
+                            <a href="/Dash/admin/customerdata"><i
+                                    class="material-icons">manage_accounts</i><span>Customer
+                                    Data</span></a>
+                        </li>
+
+                        <li class="">
+                            <a href="/Dash/admin/milkmandata"><i class="material-icons">manage_accounts</i><span>Milkman
+                                    Data</span></a>
+                        </li>
+
+                        <li class="">
+                            <a href="/Dash/admin/customertrack"><i class="material-icons">analytics</i><span>Customer
+                                    Track</span></a>
+                        </li>
+
+                        <li class="">
+                            <a href="/Dash/admin/milkmantrack"><i class="material-icons">analytics</i><span>Milkman
+                                    Track</span></a>
+                        </li>
+
+                        <li class="d-lg-none d-md-block d-xl-none d-sm-block">
+                            <a href="/logout"><i class="material-icons">person</i><span>Sign Out</span></a>
+                        </li>
+                    </div>
+
+                </ul>
+
+
+            </nav>
+
+
+
+            <!-- Page Content  -->
+            <div id="content">
+
+                <div class="top-navbar">
+                    <nav class="navbar navbar-expand-lg">
+                        <div class="container-fluid">
+
+                            <button type="button" id="sidebarCollapse" class="d-xl-block d-lg-block d-md-mone d-none">
+                                <span class="material-icons">arrow_back_ios</span>
+                            </button>
+
+                            <a class="navbar-brand"> Admin Dashboard </a>
+
+                            <button class="d-inline-block d-lg-none ml-auto more-button" type="button"
+                                data-toggle="collapse" data-target="#navbarSupportedContent"
+                                aria-controls="navbarSupportedContent" aria-expanded="false"
+                                aria-label="Toggle navigation">
+                                <span class="material-icons">more_vert</span>
+                            </button>
+
+                            <div class="collapse navbar-collapse d-lg-block d-xl-block d-sm-none d-md-none d-none"
+                                id="navbarSupportedContent">
+                                <ul class="nav navbar-nav ml-auto">
+
+                                    <li class="nav-item">
+                                        <a href="/logout"><i class="material-icons">person</i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+                <div class="main-content">
+                   
+
+
+                
+                  <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                      <div class="card card-stats">
+                        <div class="card-header">
+                          <div class="icon icon-warning">
+                            <span class="material-icons">equalizer</span>
+                          </div>
+                        </div>
+                        <div class="card-content">
+                          <h3 class="card-title">
+                            <%= customercount.length %>/<%= milkmancount.length %>
+                          </h3>
+                        </div>
+                        <div class="card-footer">
+                          <div class="stats">
+                            <i class="material-icons text-info">person</i>
+                            <a>customer/milkman</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                      <div class="card card-stats">
+                        <div class="card-header">
+                          <div class="icon icon-success">
+                            <span class="material-icons"> attach_money </span>
+                          </div>
+                        </div>
+                        <div class="card-content">
+                          <h3 class="card-title">
+                            <% if(cow.length > 0){ %> <%= cow[0].todaymilkratecow %>/<%=
+                            buffalo[0].todaymilkratebuffalo %> <% } %>
+                          </h3>
+                        </div>
+                        <div class="card-footer">
+                          <div class="stats">
+                            <i class="material-icons">local_offer</i> Cow/Buffalo Milkrate(L)
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                      <div class="card card-stats">
+                        <div class="card-header">
+                          <div class="icon icon-success">
+                            <span class="material-icons"> trending_up </span>
+                          </div>
+                        </div>
+                        <div class="card-content">
+                          <h3 class="card-title"><%= selled%></h3>
+                        </div>
+                        <div class="card-footer">
+                          <div class="stats">
+                            <i class="material-icons">update</i> Total Milk Selled(L)
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                      <div class="card card-stats">
+                        <div class="card-header">
+                          <div class="icon icon-info">
+                            <span class="material-icons"> trending_up </span>
+                          </div>
+                        </div>
+                        <div class="card-content">
+                          <h3 class="card-title"><%= gained %></h3>
+                        </div>
+                        <div class="card-footer">
+                          <div class="stats">
+                            <i class="material-icons">update</i> Total Milk Stored(L)
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>      
+          
+            </div> 
+          </div>
+
+            
+
+
+
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    $('#sidebarCollapse').on('click', function () {
+                        $('#sidebar').toggleClass('active');
+                        $('#content').toggleClass('active');
+                    });
+
+                    $('.more-button,.body-overlay').on('click', function () {
+                        $('#sidebar,.body-overlay').toggleClass('show-nav');
+                    });
+
+                });
+
+                function setInputDate(_id) {
+                    var _dat = document.querySelector(_id);
+                    var hoy = new Date(),
+                        d = hoy.getDate(),
+                        m = hoy.getMonth() + 1,
+                        y = hoy.getFullYear(),
+                        data;
+
+                    if (d < 10) {
+                        d = "0" + d;
+                    };
+                    if (m < 10) {
+                        m = "0" + m;
+                    };
+
+                    data = y + "-" + m + "-" + d;
+                    console.log(data);
+                    _dat.value = data;
+                };
+
+                setInputDate("#milkdate");
+                setInputDate("#custdate");
+
+
+
+
+
+            </script>
+
+
+
+
+
+    </body>
+
+    </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <%- include('layouts/DashHeader') %>
+<body>
+ 
+</body>
+
+</html> -->
